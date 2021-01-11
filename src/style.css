@@ -1,0 +1,79 @@
+body{
+    background-image:url("Img/League-of-Legends-Grieta.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+h1{
+    font-family: 'Pirata One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 130px;
+    text-align: center;
+    color: #D49220;
+    margin: 0px 300px 0px;
+    -webkit-text-stroke: 2px black;
+}
+p{
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    color: #FFFCFC;
+    margin: 0px 300px;
+}
+.buttonStart{
+    font-family: 'Righteous', cursive; 
+    display:block;
+    margin: auto;
+    padding: 15px;
+    min-width: 150px;
+    font-size: 14px;
+    font-weight: 900;
+    color:black;
+    background-color: #29A8C3;;
+    border: 0px;
+}
+.buttonStart:hover{
+    transition:all 0.6s ease;
+    box-shadow: 0px 0px 10px 4px rgba(255, 195, 0, 0.5), 0 0 20px rgba(255, 195, 0, 0.4);
+    text-shadow:0px 0px 20px 5px #F0C41A;
+    transform: scale(1.1);
+}
+header, footer{
+    background-color: #0D1618;
+    color: white;
+    text-decoration: none;
+    font-family: "Righteous";
+    height: 60px;
+    
+}
+
+#styleFooter{
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+
+li{
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: middle;
+}
+
+#footer{
+    text-align: center;
+    font-size: small;
+}
+
+img{
+    display: table-cell;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+
+
