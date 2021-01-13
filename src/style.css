@@ -1,3 +1,7 @@
+#styleFooter{
+    display: none;
+}
+
 body{
     background-image:url("Img/League-of-Legends-Grieta.jpg");
     background-size: 100%;
@@ -42,13 +46,13 @@ p{
     text-shadow:0px 0px 20px 5px #F0C41A;
     transform: scale(1.1);
 }
+
 header, footer{
     background-color: #0D1618;
     color: white;
     text-decoration: none;
     font-family: "Righteous";
     height: 60px;
-    
 }
 
 #styleFooter{
@@ -64,6 +68,31 @@ li{
     vertical-align: middle;
 }
 
+a{
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+  }
+
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #F0C41A;
+}
+
+a:active {
+    color:#64FFFF;
+}
+
 #footer{
     text-align: center;
     font-size: small;
@@ -72,8 +101,7 @@ li{
 img{
     display: table-cell;
     vertical-align: middle;
-    margin-top: 15px;
+    width: 7em;
 }
-
 
 

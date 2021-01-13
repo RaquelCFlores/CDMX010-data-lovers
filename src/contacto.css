@@ -1,0 +1,58 @@
+body{
+    background-color: #0D1618;
+    color: white;
+    font-family: 'Righteous', cursive;
+    padding: 25px;
+    margin: 0;
+}
+
+.logo{
+    display: table-cell;
+    vertical-align: middle;
+    width: 5em;
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: middle;
+}
+
+#contact{
+    padding: 0 70px;
+}
+
+h1{
+    text-align: center;
+}
+
+p1{
+    text-align: justify;
+}
+
+.girls{
+    width: 30%;
+}
+
+.container{
+    /*display: flex;
+    justify-content: center;*/
+    justify-content: space-evenly;
+    display: inline-block;
+    background-color: #FFE521;
+    text-align: center;
+    color: black;
+    margin: 1% 1%;
+    padding: 1% 1%;
+    width: 35%;
+    margin: 0 5%;
+}
+
+.icons{
+    margin: 0 auto;
+    max-width: 100%;
+    width: 50px;
+    height: 50px;
+}
+footer{
+    text-align: center;
+}
