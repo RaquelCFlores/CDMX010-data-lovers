@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root">Hola Soy Raquel</div>
-    <span id = "datos"></span>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Data Lovers LOL</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="encabezado">
+    <ul id="items">
+      <img src="" alt="LOL">
+      <li href="">¿Cómo jugar?</li>
+      <li href="">Comunidad LOL</li>
+      <li href="">Trucos y consejos</li>
+      <li href="">Contáctanos</li>
+    </ul>
+  </header>
+  <main class="contenido">
+    <section id="homepage">
+      <article class="inicio">
+        <h1>LA GRIETA DEL INVOCADOR</h1>
+        <p>Bienvenido al primer y más famoso Campo de la Justicia de League of Legends. Consulta la guía de más abajo
+          para familiarizarte con los campeones de LOL.</p>
+        <br><a href="#allData"><button id="buttonStart" class="buttonStart" type="button">COMENZAR</button></a><br>
+      </article><br>
+    </section>
+    <div id=allData class="allData">
+      <section class="title">
+        <h2 class="meetChampions letter" style="font-size: 2em">Conoce a los</h2>
+        <h2 class="meetChampions">CAMPEONES</h2> 
+        <h3 class="numChampions">150 campeones</h3><br>
+      </section>
+      <div class="columns">
+        <aside class="filters">
+          <form action="" class="items">
+             <input type="checkbox" name="Champion" value="Asesinos">
+             <label for="Asesinos">Asesinos</label><br>
+          </form>
+        </aside>
+        <div id=cards-container class="cards-container"></div>
+      </div>   
+    </div>
+  </main>
+
+  <footer id="styleFooter" class="pie">
+    <li>
+      <ul href="">Tendencias</ul>
+      <ul href="">Videojuegos</ul>
+    </li>
+    <p id="footer">
+      <@2021 Laboratoria>
+    </p>
+  </footer>
+
+  <script src="main.js" type="module"></script>
+  <!--<script src="data.js"></script>-->
+</body>
+
 </html>

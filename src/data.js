@@ -1,4 +1,6 @@
+//TODAS LAS FUNCIONES
 // estas funciones son de ejemplo
+import lol from './data/lol/lol.js';
 
 export const example = () => {
   return 'example';
@@ -7,3 +9,4 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
+
