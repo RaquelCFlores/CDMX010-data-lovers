@@ -1,24 +1,28 @@
-#styleFooter{
-    display: none;
-} 
-
 html{
     scroll-behavior: smooth;
 }
 
-*{
+* {
+    padding: 0;
+    margin:0;
     box-sizing: border-box;
 }
 
+
 body{
     background-image:url("Img/League-of-Legends-Grieta.jpg");
-    background-size: 100%;
+    background-size: cover;
+    background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     width: 100%;
     height: 100%;
-    
+}
+
+#homepage{
+    height: 100vh;
+    margin-top: 10vh;
 }
 
 .allData{
@@ -42,17 +46,19 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 80%;
     height: 100%;
-    margin: 0px 30px;
-    padding: 0px 0px 30px 0px;
+    margin: 0px 70px 0px 30px;
+    padding: 20px 0px 20px 0px;
 }
 
 #one-container{
-    justify-content: space-evenly; 
-    float:left; 
-    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem 1rem;
     width: 20%; 
     height:100%; 
-    overflow: hidden;
+    background-color: #0F474A; 
 }
 
 .img-container{
@@ -63,13 +69,11 @@ body{
 }
 
 #description{
-    background-color: #0F474A; 
-    color: #FFFDFD; 
-    font-family: 'Pirata One'; 
+    font-family: 'Pirata One', cursive; 
     font-size: 2em; 
     text-align: center; 
-    margin: 0 0; 
-    width: 100%
+    margin: auto 0; 
+    width: 100%;
 }
 
 h4{
@@ -77,23 +81,23 @@ h4{
 }
 
 .filters {
-    width: 20%;
+    width: 15%;
     height: 100%;
-    border: 1px solid white;
+    border: 10px solid rgba(44, 66, 104, 0.5);;
     margin-left: 20px;
 }
 
 aside .cards-container{
-   display: flex;
-   justify-content: center;
-   align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title{
     width: 100%;
     height: 30%;
     justify-content: center;
-}
+} 
 
 .meetChampions{
     font-family: Righteous;
@@ -102,6 +106,7 @@ aside .cards-container{
     line-height: 30px;
     text-align: center;
     color: #000000;
+    margin-bottom: 3rem;
 }
 
 .numChampions{
@@ -110,56 +115,54 @@ aside .cards-container{
     font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: left;
     color: #FFFCFC;
-    margin: 0px 300px;
-    width: 75%;
-    height: 40%;
-}
-
-
-.styleImg{
-    width: 7rem;
-    height: 7rem;
-}
-
-#homepage{
-    height: 100vh;
+    margin: 0px 232px;
+    width: 77.5%;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 2rem;
 }
 
 h1{
     font-family: 'Pirata One', cursive;
     font-style: normal;
     font-weight: normal;
-    font-size: 130px;
+    font-size: 8.125rem;
     text-align: center;
     color: #D49220;
-    margin: 0px 300px 0px;
-    -webkit-text-stroke: 2px black;
+    margin: 0px 18.75rem 0px;
+    -webkit-text-stroke: 0.125rem black;
 }
 
-p{
+h2{
+    margin-top: 1rem;
+}
+
+.text{
     font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
     color: #FFFCFC;
-    margin: 0px 300px;
+    margin: 0px 18.75rem;
 }
+
 .buttonStart{
     font-family: 'Righteous', cursive; 
     display:block;
     margin: auto;
-    padding: 15px;
-    min-width: 150px;
-    font-size: 14px;
-    font-weight: 900;
+    padding: 0.9375rem;
+    min-width:9.375rem;
+    font-size: 0.875rem;
+    font-weight: 56.25rem;
     color:black;
-    background-color: #29A8C3;;
+    background-color: #29A8C3;
     border: 0px;
 }
+
 .buttonStart:hover{
     transition:all 0.6s ease;
     box-shadow: 0px 0px 10px 4px rgba(255, 195, 0, 0.5), 0 0 20px rgba(255, 195, 0, 0.4);
@@ -170,21 +173,62 @@ p{
 header, footer{
     background-color: #0D1618;
     color: white;
-    text-decoration: none;
     font-family: "Righteous";
-    height: 60px;    
+    height: 3.75rem;
 }
 
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
 #styleFooter{
+    position: relative;
+    margin-bottom: 0;
     bottom: 0;
     width: 100%;
-    position: fixed;
-} 
+    height: auto; 
+    margin-top: 5rem;
+}
 
-li{
+ul{
     display: flex;
-    justify-content: space-evenly;
-    vertical-align: middle;
+    justify-content: space-around;
+    list-style: none;
+    float:right;
+    width: 100%;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #F0C41A;
+}
+
+a:active {
+    color:#64FFFF;
 }
 
 #footer{
@@ -192,10 +236,136 @@ li{
     font-size: small;
 }
 
-img{
+.logo{
     display: table-cell;
     vertical-align: middle;
-    margin-top: 15px;
+    width: 7em;
+}
+
+.categories{
+    text-align: justify;
+    padding: 1rem;
+    font-family:'Righteous', cursive;
+    color: white;
+    line-height: 2rem;
+}
+
+#uploadButton{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+}
+
+.button{
+    display:scroll;
+    position:fixed;
+    top: 27rem;
+    bottom:20rem;
+    right: 1rem;
+}
+
+
+/*Aquí estamos trabajando responsive con medidas para 3 distintas pantallas*/
+
+@media only screen and (min-width: 780px) and (max-width: 1024px){
+    h1{
+        font-size: 5.5rem;
+    }
+
+    .text{
+        font-size: 1rem;
+    }
+    .buttonStart{
+        padding: 0.9375rem;
+        min-width:5.375rem;
+        font-size: 0.6rem;
+        font-weight: 36.25rem;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 779px){
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        width: 45%;
+    }
+    .text{
+        font-size: 0.7rem;
+        text-align: center;
+        width: 45%;
+    }
+    .buttonStart{
+        padding: 0.4rem;
+        min-width:3.375rem;
+        font-size: 0.3rem;
+        font-weight: 14.25rem;
+    }
+    #uploadButton{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    h2{
+        font-size: 0.5rem;
+    }
+    .numChampions{
+        font-size: 0.75rem;
+    }
+    .categories{
+        font-size: 0.5rem;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    #homepage{
+        height: 100vh;
+        margin-top: 10vh;
+    }
+}
+
+
+@media screen and (max-width: 479px){
+
+    body{
+        margin: 0 auto;
+        width: 80vh;
+        /*max-width: 75 rem;*/
+    }
+    h1{
+        font-size: 5rem;
+        margin: 0 auto;
+        
+    }
+
+    p{
+        font-size: 0.75rem;
+        margin: 0 auto;
+        
+    }
+    .buttonStart{
+        /*padding: 0.9375rem;
+        min-width:9.375rem;*/
+        font-size: 0.700rem;
+        font-weight: 40rem;
+    }
+
+    /*img{
+        width: 20%;
+
+    }*/
+
+    header,section, footer{
+        width: 100%;
+    }
+   /* header, footer{
+    height: 2rem;
+    }
+
+    a{
+        
+    }
+        */
+
 }
 
 
