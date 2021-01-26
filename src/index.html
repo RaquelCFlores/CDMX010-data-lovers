@@ -2,36 +2,66 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers LOL</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-        <li>
-            <img src="Img/LogoLOL.png" alt="LOL">
-            <ul><a href="https://youtu.be/7Af0bURe5NY" target="_blank">¿Cómo jugar?</a></ul>
-            <ul><a href="https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki" target="_blank" target="_blank">Comunidad LOL</a></ul>
-            <ul><a href="http://bit.ly/3qcm9M0" target="_blank" target="_blank">Trucos y consejos</a></ul>
-            <ul><a href="contacto.html" target="_blank" target="_blank">Contáctanos</a></ul>
-        </li>
+    <header class="header">
+      <ul>
+            <li><img class="logo" src="Img/LogoLOL.png" alt="LOL"></li>
+            <li class="link"><a href="https://www.youtube.com/watch?v=WWa5uAzYDkQ&feature=youtu.be" target="_blank">¿Cómo jugar?</a></li>
+            <li class="link"><a href="https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki" target="_blank">Comunidad LOL</a></li>
+            <li class="link"><a href="http://bit.ly/3qcm9M0" target="_blank">Trucos y consejos</a></li>
+            <li class="link"><a href="contacto.html" target="_blank">Contáctanos</a></li>
+        </ul>
       
     </header>
-    <div id="root"></div>
+    
     <section id="homepage">
-    <h1>LA GRIETA DEL INVOCADOR</h1>
-    <p>Bienvenido al primer y más famoso Campo de la Justicia de League of Legends. Consulta la guía de más abajo para familiarizarte con los campeones de LOL.</p>
-    <br><button class="buttonStart">COMENZAR</button><br>
-    <br>
+      <h1>LA GRIETA DEL INVOCADOR</h1>
+      <p class="text" >Bienvenido al primer y más famoso Campo de la Justicia de League of Legends. Consulta la guía de más abajo para familiarizarte con los campeones de LOL.</p>
+      <br><a href="#allData"><button id="buttonStart" class="buttonStart" type="button" click="showButtonGoUp();">COMENZAR</button></a><br>
     </section>
-
+    <div id=allData class="allData">
+      <section class="title">
+        <h2 class="meetChampions letter" style="font-size: 2em">Conoce a los</h2>
+        <h2 class="meetChampions">CAMPEONES</h2> 
+        <div>
+          <h3 class="numChampions">150 campeones</h3>
+        </div>
+      </section>
+      <div class="columns">
+        <aside class="filters">
+          <form action="" class="categories">
+            <input type="checkbox" name="Champion" value="Asesinos">
+            <label class="category" for="Asesinos">Asesinos</label><br>
+            <input type="checkbox" name="Champion" value="Luchadores">
+            <label class="category" for="Luchadores">Luchadores</label><br>
+            <input type="checkbox" name="Champion" value="Magos">
+            <label class="category" for="Magos">Magos</label><br>
+            <input type="checkbox" name="Champion" value="Tiradores">
+            <label class="category" for="Tiradores">Tiradores</label><br>
+            <input type="checkbox" name="Champion" value="Soportes">
+            <label class="category" for="Soportes">Soportes</label><br>
+            <input type="checkbox" name="Champion" value="Tanques">
+            <label class="category" for="Tanques">Tanques</label><br>
+          </form>
+        </aside>
+        <div id=cards-container class="cards-container"></div>
+      </div>   
+    </div>
+      <div id="goUp" class="goUp">
+        <a href="#allData"><input id="uploadButton" type="image"src="Img/flechaLOLsubir.png" alt="Subir" class="button"></a>
+      </div>
     <footer id="styleFooter">
-      <li>
-        <ul href="">Tendencias</ul>
-        <ul href="">Videojuegos</ul> 
-      </li>
-      <p id="footer"><@2021 Laboratoria></p>
+      <ul>
+        <li class="link"><a href="https://as.com/meristation/2021/01/09/noticias/1610197361_524333.html" target="_blank">Tendencias</a></li>
+        <li class="link"><a href="https://as.com/meristation/juegos/league_of_legends/" target="_blank">Videojuegos</a></li>
+      </ul>
+      <p id="footer" class="text" ><@2021 Laboratoria></p>
 
     </footer>
 
