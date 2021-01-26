@@ -1,0 +1,151 @@
+body{
+    background-image:url("Img/campeonesLOL.jpg");
+    background-size: 100%;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    font-family:'Pirata One', cursive;
+    color: #D49220;
+    -webkit-text-stroke: 1px black;
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.p1{
+    background-color:rgba(41, 168, 195, 0.46);
+    margin: 0.625rem;
+    width: 1100px;
+    font-family: 'Righteous', cursive;
+    text-align: justify;
+}
+
+#contact{
+    padding: 0 3%;
+}
+
+header{
+    background-color: #0D1618;  
+    height: 3.75rem;
+    padding: 0;
+    margin-top: 0;
+}
+
+.logoLOL{ 
+    width: 7em;
+    /*height: 2.875rem;*/
+    padding: 5px;
+    float: left;
+    margin: 0 3%;
+}
+
+.logo{ 
+    width: 3.5rem;
+    height: 2.875rem;
+    padding: 5px;
+    float: right;
+    margin: 0 3%;
+}
+
+.creators{
+    text-align: center;
+}
+
+.container{
+    display: inline-block;
+    margin: 2rem;
+    padding-top: 1rem;
+}
+
+img{
+    width: 70vh;
+}
+/*.creators{
+    text-align: center;
+    font-family:'Pirata One', cursive;
+}
+
+.container{
+    background-color:rgba(41, 168, 195, 0.46);
+    display: inline-block;
+    width: 30%;
+    margin: 2rem;
+    padding-top: 1rem;
+}
+
+.girls{
+    width: 10rem;
+    height: 10rem;
+}
+
+.icons{
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+*/
+
+footer{
+    font-family: 'Righteous', cursive;
+    text-align: center;
+}
+
+
+/*body{
+    background-color: #0D1618;
+    color: white;
+    font-family: 'Righteous', cursive;
+    padding: 25px;
+    margin: 0;
+}
+
+.logo{
+    display: table-cell;
+    vertical-align: middle;
+    width: 5em;
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: middle;
+}
+
+#contact{
+    padding: 0 70px;
+}
+
+h1{
+    text-align: center;
+}
+
+p1{
+    text-align: justify;
+}
+
+.girls{
+    width: 30%;
+}
+
+.container{
+    /*display: flex;
+    justify-content: center;*/
+    /*justify-content: space-evenly;
+    display: inline-block;
+    background-color: #FFE521;
+    text-align: center;
+    color: black;
+    margin: 1% 1%;
+    padding: 1% 1%;
+    width: 35%;
+    margin: 0 5%;
+/*}
+
+.icons{
+    margin: 0 auto;
+    max-width: 100%;
+    width: 50px;
+    height: 50px;
+}
+footer{
+    text-align: center;
+}
