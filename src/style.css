@@ -1,3 +1,7 @@
+#filter-cards-container{
+    display: none;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -50,6 +54,18 @@ body{
     padding: 20px 0px 20px 0px;
 }
 
+.filter-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: rgba(44, 66, 104, 0.58);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    height: 100%;
+    margin: 0px 70px 0px 30px;
+    padding: 20px 0px 20px 0px;
+} 
+
 #one-container{
     display: flex;
     flex-direction: row;
@@ -59,6 +75,7 @@ body{
     width: 20%; 
     height:100%; 
     background-color: #0F474A; 
+    color: white;
 }
 
 .img-container{
@@ -74,6 +91,13 @@ body{
     text-align: center; 
     margin: auto 0; 
     width: 100%;
+    font-weight: lighter;
+}
+
+.one-container:hover{
+    transition:all 0.6s ease;
+    box-shadow: 0px 0px 10px 4px #57FEFF;
+    transform: scale(1.1);
 }
 
 h4{
@@ -83,8 +107,11 @@ h4{
 .filters {
     width: 15%;
     height: 100%;
-    border: 10px solid rgba(44, 66, 104, 0.5);;
     margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 aside .cards-container{
@@ -119,10 +146,40 @@ aside .cards-container{
     text-align: left;
     color: #FFFCFC;
     margin: 0px 232px;
-    width: 77.5%;
+    width: 74.5%;
     height: 3rem;
     line-height: 3rem;
     padding-left: 2rem;
+}
+
+.search-container{
+    width: 300px;
+    height: 50px;
+    border: none;
+    font-size: 10pt;
+    float: right;
+    color: #63717f;
+    line-height: 3.2rem;
+    padding-left: 4px;
+    /* font-size: 1em; */
+    /* -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; */
+}
+
+/* .lupa{
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border: solid black;
+    margin-top: 10px;
+} */
+
+#buscar{
+    font-family: 'Righteous', cursive;
+    height: 2rem;
+    width: 12rem;
+    font-size: 1.3em;
 }
 
 h1{
@@ -189,8 +246,9 @@ header, footer{
     margin-bottom: 0;
     bottom: 0;
     width: 100%;
-    height: auto; 
+    height: 3.75rem;
     margin-top: 5rem;
+    padding-top: 1em;
 }
 
 ul{
@@ -248,22 +306,39 @@ a:active {
     font-family:'Righteous', cursive;
     color: white;
     line-height: 2rem;
+    border: 10px solid rgba(44, 66, 104, 0.5);
+}
+
+.select{
+    width: 9.7rem;
+    height: 2rem;
+    font-family: 'Righteous', cursive;
+    font-size: 1em;
+    /* background-color: rgba(44, 66, 104, 0.5);
+    background-color: transparent;
+    border: 5px solid rgba(44, 66, 104, 0.5);
+    color: white; */
 }
 
 #uploadButton{
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     margin-bottom: 2rem;
 }
 
 .button{
     display:scroll;
     position:fixed;
-    top: 27rem;
+    top: 26rem;
     bottom:20rem;
-    right: 1rem;
+    right: 0.5rem;
 }
 
+.pNoFound{
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: 2rem;
+}
 
 /*Aquí estamos trabajando responsive con medidas para 3 distintas pantallas*/
 
@@ -323,7 +398,6 @@ a:active {
     }
 }
 
-
 @media screen and (max-width: 479px){
 
     body{
@@ -357,7 +431,7 @@ a:active {
     header,section, footer{
         width: 100%;
     }
-   /* header, footer{
+/* header, footer{
     height: 2rem;
     }
 
