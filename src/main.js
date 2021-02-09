@@ -1,202 +1,175 @@
 //Eventos del DOM   
-import { filterData1, filterData2, filterData3, filterData4, filterData5, filterData6 } from './data.js';
-//import { sortData } from './data.js';
-// import { filterData3 } from './data.js';
-// import { filterData4 } from './data.js';
-// import { filterData5 } from './data.js';
-// import { filterData6 } from './data.js';
+import { filterData, sortData, sortDataAZ, orderRandom} from './data.js';
 import data from './data/lol/lol.js';
 //console.log(example, data);
 //Aquí estamos conviertiendo nuestro objeto de objetos en un array//
 const champions = Object.values(data.data);
 const championsNum = champions.length;
 document.getElementById('numChampions').innerHTML = championsNum;
-const newCard = document.getElementById("cards-container");
-///////////////////////////////////////////////////////////////////////
-let filterAssassin = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR ASESINOS
+let newCard = document.getElementById("cards-container");
+
+//--FUNCIÓN RECORRER LA DATA Y CREAR TARJETAS--//
+
+function createHtml(oneChampion){
+    let {splash, name} = oneChampion;
+    if(splash && name){
+    return `
+        <div id="one-container">
+            <img src="${splash}"class="img-container">
+            <h4 id="description">${name}</h4>
+        </div>
+    `
+    }
+}
+
+
+function createCards(champions){
+    let cards = "";
+    champions.forEach(elchampion => {
+    cards += createHtml(elchampion)
+    });
+
+    newCard.innerHTML = cards;
+}
+
+createCards (champions);
+//---------------------------------------------//
+//  FUNCIÓN PARA FILTRAR ASESINOS
 document.querySelector('#assassin').addEventListener('change', (event) =>{
     if(event.target.checked){ 
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterAssassin1 = filterData1(champions, 'Assassin');
-        filterAssassin1.forEach(elemento => {
-            let resultAssassin = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;  
-            filterAssassin.insertAdjacentHTML("beforeend", resultAssassin);
-            });
-            let numAssassin = filterAssassin1.length;
-            document.getElementById('numChampions').innerHTML = numAssassin; 
+        let filterAssassin1 = filterData(champions, 'Assassin');
+        createCards(filterAssassin1);
+        let numAssassin = filterAssassin1.length;
+        document.getElementById('numChampions').innerHTML = numAssassin; 
         }
         else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
+            createCards(champions);
             const championsNum = champions.length;
             document.getElementById('numChampions').innerHTML = championsNum;
         }
     })
-
-
-let filterFighter = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR LUCHADORES
+//--------------FUNCIÓN PARA FILTRAR LUCHADORES--------------//
 document.querySelector('#fighter').addEventListener('change', (event) =>{
     if(event.target.checked){ 
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterFighter1 = filterData2(champions, 'Fighter');
-        filterFighter1.forEach(elemento => {
-            let resultFighter = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;
-            filterFighter.insertAdjacentHTML("beforeend", resultFighter);
-            });
-            let numFighter = filterFighter1.length;
-            document.getElementById('numChampions').innerHTML = numFighter;
+        let filterFighter1 = filterData(champions, 'Fighter');
+        createCards(filterFighter1);
+        let numFighter = filterFighter1.length;
+        document.getElementById('numChampions').innerHTML = numFighter;
         }
         else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
-            const championsNum = champions.length;
-            document.getElementById('numChampions').innerHTML = championsNum;
+        createCards (champions);
+        const championsNum = champions.length;
+        document.getElementById('numChampions').innerHTML = championsNum;
         } 
     })
-
-
-let filterMage = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR MAGOS
+//------------------------------------------------------------//
+//--------------FUNCIÓN PARA FILTRAR MAGOS--------------//
 document.querySelector('#mage').addEventListener('change', (event) =>{
     if(event.target.checked){ 
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterMage1 = filterData3(champions, 'Mage');
-        filterMage1.forEach(elemento => {
-            let resultMage = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;
-            filterMage.insertAdjacentHTML("beforeend", resultMage);
-            });
-            let numMage = filterMage1.length;
-            document.getElementById('numChampions').innerHTML = numMage; 
+        let filterMage1 = filterData(champions, 'Mage');
+        createCards(filterMage1);
+        let numMage = filterMage1.length;
+        document.getElementById('numChampions').innerHTML = numMage;
         }
         else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
-            const championsNum = champions.length;
-            document.getElementById('numChampions').innerHTML = championsNum;
+        createCards (champions);
+        const championsNum = champions.length;
+        document.getElementById('numChampions').innerHTML = championsNum;
         } 
     })
-
-
-let filterMarksman = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR TIRADORES
+//------------------------------------------------------------//
+//--------------FUNCIÓN PARA FILTRAR TIRADORES--------------//
 document.querySelector('#marksman').addEventListener('change', (event) =>{
     if(event.target.checked){ 
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterMarksman1 = filterData4(champions, 'Marksman');
-        filterMarksman1.forEach(elemento => {
-            let resultMarksman = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;
-            filterMarksman.insertAdjacentHTML("beforeend", resultMarksman);
-            });
-            let numMarksman = filterMarksman1.length;
-            document.getElementById('numChampions').innerHTML = numMarksman; 
+        let filterMarksman1 = filterData(champions, 'Marksman');
+        createCards(filterMarksman1);
+        let numMarksman = filterMarksman1.length;
+        document.getElementById('numChampions').innerHTML = numMarksman;
         }
         else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
-            const championsNum = champions.length;
-            document.getElementById('numChampions').innerHTML = championsNum;
+        createCards (champions);
+        const championsNum = champions.length;
+        document.getElementById('numChampions').innerHTML = championsNum;
         } 
     })
-
-
-let filterSupport = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR SOPORTES
+//------------------------------------------------------------//
+//--------------FUNCIÓN PARA FILTRAR SOPORTES--------------//
 document.querySelector('#support').addEventListener('change', (event) =>{
     if(event.target.checked){ 
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterSupport1 = filterData5(champions, 'Support');
-        filterSupport1.forEach(elemento => {
-            let resultSupport = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;
-            filterSupport.insertAdjacentHTML("beforeend", resultSupport);
-            });
-            let numSupport = filterSupport1.length;
-            document.getElementById('numChampions').innerHTML = numSupport;
+        let filterSupport1 = filterData(champions, 'Support');
+        createCards(filterSupport1);
+        let numSupport = filterSupport1.length;
+        document.getElementById('numChampions').innerHTML = numSupport;
         }
         else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
-            const championsNum = champions.length;
-            document.getElementById('numChampions').innerHTML = championsNum;
-        }  
-    })  
-
-
-let filterTank = document.getElementById('filter-cards-container');
-//FUNCIÓN PARA FILTRAR TANQUES
-document.querySelector('#tank').addEventListener('change', (event) =>{
-    if(event.target.checked){
-        document.getElementById('cards-container').style.display = "none";
-        document.getElementById('filter-cards-container').style.display = "flex";
-        let filterTank1 = filterData6(champions, 'Tank');
-        filterTank1.forEach(elemento => {
-            let resultTank = `
-                <div id="one-container" class="one-container">
-                    <img src="${elemento.splash}" class="img-container">
-                    <h4 id="description">${elemento.name}</h4>
-                </div>
-                `;
-            filterTank.insertAdjacentHTML("beforeend", resultTank);
-            });
-            let numTank = filterTank1.length;
-            document.getElementById('numChampions').innerHTML = numTank; 
-        }
-        else {
-            document.getElementById('cards-container').style.display = "flex";
-            document.getElementById('filter-cards-container').style.display = "none";
-            const championsNum = champions.length;
-            document.getElementById('numChampions').innerHTML = championsNum;
-        }  
+        createCards (champions);
+        const championsNum = champions.length;
+        document.getElementById('numChampions').innerHTML = championsNum;
+        } 
     })
+//------------------------------------------------------------//
+//--------------FUNCIÓN PARA FILTRAR TANQUES--------------//
+document.querySelector('#tank').addEventListener('change', (event) =>{
+    if(event.target.checked){ 
+        let filterTank1 = filterData(champions, 'Tank');
+        createCards(filterTank1);
+        let numTank = filterTank1.length;
+        document.getElementById('numChampions').innerHTML = numTank;
+        }
+        else {
+        createCards (champions);
+        const championsNum = champions.length;
+        document.getElementById('numChampions').innerHTML = championsNum;
+        } 
+    })
+//------------------------------------------------------------//
+///////////////////////////////////////////////////////////////////////
+
+//--------------FUNCIONES DE ORDENAMIENTO Z-A/ A-Z/ RANDOM-----------------//
+document.querySelector("#select").addEventListener('change', (event) =>{
+    if (event.target.value === "Z-A"){
+        let filterZA = sortData(champions);
+        createCards(filterZA);
+        } else if (event.target.value === "A-Z"){
+            let filterAZ = sortDataAZ(champions);
+            createCards (filterAZ);
+        }else if (event.target.value === "Random"){
+            let filterRandom = orderRandom(champions);
+            createCards(filterRandom);
+        }   
+    })
+//------------------------------------------------------//
 
 
-// function showFilterAZ(e) {
-//     document.querySelector("#az").textContent = e.detail;
-//     return sortData
+// //--------------FUNCIÓN PARA FILTRAR DE LA Z-A --------------//
+// document.querySelector('#select').addEventListener('change', (event) =>{
+//     if (event.target.value === "Z-A"){
+//         const filterZA = sortData(champions)
+//         createCards(filterZA);
+//         } else if (event.target.value === "A-Z"){
+//             let filterAZ = sortDataAZ(champions);
+//             createCards (filterAZ);
+//         }
+//         // else{
+//         //     return createCards(champions);
+//         // }
+//     })
+
+
+// document.querySelector('#select').addEventListener('change', (event) =>{
+//     const orderZA = event.target.value; 
+//     if (orderZA === "A-Z"){
+//         console.log(createCards(champions));
+//         }
+//         // return createCards;
+//     })
+//--------------FUNCIÓN PARA FILTRAR DE LA Z-A--------------//
+// document.querySelector("#select").addEventListener('click', showFilterAZ);
+// function showFilterAZ (){
+//     //console.log(sortData(champions));
+//     let filterAZ = sortData(champions)
+//     createCards(filterAZ);
 // }
-/////////////////////////////////////////////////////////////////////////////
-
-// let allAssassin = loll(champions, 'Assassin');{
-//     allAssassin = `
-//         <div id="one-container" class="one-container">
-//             <img src="${assassin.splash}" class="img-container">
-//             <h4 id="description">${assassin.name}</h4>
-//         </div>
-//         `;
-//     newCard.insertAdjacentHTML("beforeend", allAssassin);
-// };
-
 //Codigo Carlos
 // document.addEventListener('DOMContentLoaded',()=>{
 //     console.log("algo")
@@ -208,17 +181,6 @@ document.querySelector('#tank').addEventListener('change', (event) =>{
 //     //console.log(loll(champions, 'Assassin'));
 // })
 
-//const createCards = () => { 
-    champions.forEach(champion => {
-    let card = `
-        <div id="one-container" class="one-container">
-            <img src="${champion.splash}" class="img-container">
-            <h4 id="description">${champion.name}</h4>
-        </div>
-        `;
-    newCard.insertAdjacentHTML("beforeend", card);
-    });
-// }
 
 //Barra buscadora de campeones
 //--------------------BUSCAR-------------------//

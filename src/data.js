@@ -1,80 +1,55 @@
 // Aquí van las Funciones : estas funciones son de ejemplo
 
 //import lol from './data/lol/lol.js';
-export const example = () => {
-  return 'example';
-};
+// export const example = () => {
+//   return 'example';
+// };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-//Filtrado para categoría de Asesinos
-export function filterData1(champions,){
-  let resultAssassin = champions.filter(champion => {
-    let assassin = (champion.tags[0] === "Assassin") + (champion.tags[1] === "Assassin");
-    return assassin;
-  })
-  return resultAssassin;
+// export const anotherExample = () => {
+//   return 'OMG';
+// };
+//------------FUNCIÓN PARA FILTRAR----------//
+export function filterData(champions, condition){
+  let result = champions.filter(champion => {
+    let champions = (champion.tags[0] === condition) + (champion.tags[1] === condition);
+    return champions;
+  }
+)
+return result;
 }
-
-//Filtrado para categoría de Luchadores
-export function filterData2(champions,){
-  let resultFighter = champions.filter(champion => {
-    let fighter = (champion.tags[0] === "Fighter") + (champion.tags[1] === "Fighter");
-    return fighter;
+//-------------------------------------------------//
+//-----------FUNCIÓN ORDENAR DE LA Z-A-----------//
+export function sortData(champions){
+  let orderZA = champions.sort((b, a) =>{
+  if(b.name < a.name){
+      return 1;
+  }
+  return -1;
+  });
+  return orderZA;
+  }
+//------------------------------------//
+//-----------FUNCIÓN ORDENAR DE LA A-Z-----------//
+export function sortDataAZ(champions){
+  let orderAZ = champions.sort((a, b) =>{
+  if(a.name > b.name){
+      return 1;
+  }
+  return -1;
   })
-  return resultFighter;
-}
+  return orderAZ;
+  }
 
-//Filtrado para categoría de Magos
-export function filterData3(champions,){
-  let resultMage = champions.filter(champion => {
-    let mage = (champion.tags[0] === "Mage") + (champion.tags[1] === "Mage");
-    return mage;
-  })
-  return resultMage;
-}
+//------------FUNCIÓN RANDOM---------------//
 
-//Filtrado para categoría de Tiradores
-export function filterData4(champions,){
-  let resultMarksman = champions.filter(champion => {
-    let marksman = (champion.tags[0] === "Marksman") + (champion.tags[1] === "Marksman");
-    return marksman;
-  })
-  return resultMarksman;
+export function orderRandom(champions){
+  let ordRandom = champions.sort( () => {
+    return Math.random () -0.5
+  });
+return ordRandom;
 }
+//----------------------------------------//
 
-//Filtrado para categoría de Soportes
-export function filterData5(champions,){
-  let resultSupport = champions.filter(champion => {
-    let support = (champion.tags[0] === "Support") + (champion.tags[1] === "Support");
-    return support;
-  })
-  return resultSupport;
-}
-
-//Filtrado para categoría de Tanques
-export function filterData6(champions,){
-  let resultTank = champions.filter(champion => {
-    let tank = (champion.tags[0] === "Tank") + (champion.tags[1] === "Tank");
-    return tank;
-  })
-  return resultTank;
-}
-
-//-----------FUNCIÓN ORDENAR-----------//
-// export function sortData(champions   /*, sortBy, sortOrder*/){
-//   let orderZA = champions.sort((b, a) =>{
-//   if(b.name < a.name){
-//       return 1;
-//   }
-//   return -1;
-//   });
-//   return orderZA;
-//   }
-//   //------------------------------------//
-  
 
 // export const filter = (champions, id) => {
 //   //     const tags = champions.forEach(champion => champion.tag.filter(tag => tag === id));
