@@ -17,9 +17,7 @@
             <li class="link"><a href="http://bit.ly/3qcm9M0" target="_blank">Trucos y consejos</a></li>
             <li class="link"><a href="contacto.html" target="_blank">Contáctanos</a></li>
         </ul>
-      
-    </header>
-    
+    </header>    
     <section id="homepage">
       <h1>LA GRIETA DEL INVOCADOR</h1>
       <p class="text" >Bienvenido al primer y más famoso Campo de la Justicia de League of Legends. Consulta la guía de más abajo para familiarizarte con los campeones de LOL.</p>
@@ -27,16 +25,15 @@
     </section>
     <div id="allData" class="allData">
       <section class="title">
-        <h2 class="meetChampions letter" style="font-size: 2em">Conoce a los</h2>
-        <h2 class="meetChampions">CAMPEONES</h2> 
-        <div>
-          <h3 id="" class="numChampions">
-            <span id="numChampions"></span>
-              campeones
-            <span class="buscar">
-              <input type="text" id="buscar" placeholder="Buscar">
-            </span>
-          </h3>
+        <h2 class="meetChampions letter">Conoce a los</h2>
+        <h2 class="meetChampions style">CAMPEONES</h2> 
+        <div class="searchAndNum">
+          <div class="search-container">
+            <span><input type="text" id="buscar" placeholder="Buscar"></span>
+          </div>
+          <div class="blue-box">
+            <h3 class="numChampions"><span id="numChampions"></span> campeones</h3>
+          </div>
         </div>
       </section>
       <div class="columns">
@@ -44,38 +41,47 @@
           <select name="Ordenar" id="select" class="select">
             <option value="Ordenar por..">Ordenar por...</option>
             <option value="A-Z" id="az">Ordenar A-Z</option>
-            <option value="Z-A" id="az">Ordenar Z-A</option>
+            <option value="Z-A" id="za">Ordenar Z-A</option>
             <option value="Random" id="random">Random</option>
           </select><br><br>
           <form action="" class="categories">
-            <input type="checkbox" id="assassin"  name="Champion" value="Asesinos">
+            <input type="checkbox" id="assassin" value="Asesinos">
             <label class="category" for="Asesinos">Asesinos</label><br>
-            <input type="checkbox" id="fighter" name="Champion" value="Luchadores">
+            <input type="checkbox" id="fighter" value="Luchadores">
             <label class="category" for="Luchadores">Luchadores</label><br>
-            <input type="checkbox" id="mage" name="Champion" value="Magos">
+            <input type="checkbox" id="mage" value="Magos">
             <label class="category" for="Magos">Magos</label><br>
-            <input type="checkbox" id="marksman" name="Champion" value="Tiradores">
+            <input type="checkbox" id="marksman" value="Tiradores">
             <label class="category" for="Tiradores">Tiradores</label><br>
-            <input type="checkbox" id="support" iname="Champion" value="Soportes">
+            <input type="checkbox" id="support" value="Soportes">
             <label class="category" for="Soportes">Soportes</label><br>
-            <input type="checkbox" id="tank" name="Champion" value="Tanques">
+            <input type="checkbox" id="tank" value="Tanques">
             <label class="category" for="Tanques">Tanques</label><br>
           </form>
         </aside>
         <div id="cards-container" class="cards-container"></div>
-         <div id="filter-cards-container" class="cards-container"></div>
       </div>   
     </div>
       <div id="goUp" class="goUp">
-        <a href="#allData"><input id="uploadButton" type="image"src="Img/flechaLOLsubir.png" alt="Subir" class="button"></a>
+        <a href="#allData">
+          <input id="uploadButton" type="image" src="Img/flechaLOLsubir.png" alt="Subir" class="button" />
+        </a>
       </div>
     <footer id="styleFooter">
       <ul>
-        <li class="link"><a href="https://as.com/meristation/2021/01/09/noticias/1610197361_524333.html" target="_blank">Tendencias</a></li>
-        <li class="link"><a href="https://as.com/meristation/juegos/league_of_legends/" target="_blank">Videojuegos</a></li>
+        <li class="link">
+          <a href="https://as.com/meristation/2021/01/09/noticias/1610197361_524333.html" target="_blank">
+            Tendencias
+          </a>
+        </li>
+        <li class="link">
+          <a href="https://as.com/meristation/juegos/league_of_legends/" target="_blank">
+            Videojuegos
+          </a>
+        </li>
       </ul>
-      <p id="footer" class="text" ><@2021 Laboratoria></p>
-
-  <script src="main.js" type="module"></script>
-</body>
+      <p id="footer" class="text">&#60;@2021 Laboratoria&#62;</p>
+    </footer>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>

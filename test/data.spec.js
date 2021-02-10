@@ -1,5 +1,7 @@
+//import { example, anotherExample } from '../src/data.js';
 import { filterData, sortData, sortDataAZ, orderRandom } from '../src/data.js';
 import data from '../src/data/lol/lol.js';
+
 const champions = Object.values(data.data);
 
 describe('filterData', () => {
@@ -31,19 +33,23 @@ describe('filterData', () => {
     expect(tank.length).toBe(40);
   });
 });
+
 describe('sortData', () => {
   it('is a function', () => {
     expect(typeof sortData).toBe('function');
   });
+
   it('returns an array of champions sorted from Z to A when the provided filter is sort Z- A', () => {
     const filterZA = sortData(champions)
     expect(filterZA.length).toBe(134);
   });
 });
+
 describe('sortDataAZ', () => {
   it('is a function', () => {
     expect(typeof sortDataAZ).toBe('function');
   });
+
   it('returns an array of champions sorted from A to Z when the provided filter is sort A-Z', () => {
     const filterAZ = sortDataAZ(champions)
     expect(filterAZ.length).toBe(134);
