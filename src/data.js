@@ -1,13 +1,4 @@
-// Aquí van las Funciones : estas funciones son de ejemplo
-
-//import lol from './data/lol/lol.js';
-// export const example = () => {
-//   return 'example';
-// };
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
+// Aquí van las Funciones 
 //------------FUNCIÓN PARA FILTRAR----------//
 export function filterData(champions, condition){
   let result = champions.filter(champion => {
@@ -49,16 +40,3 @@ export function orderRandom(champions){
 return ordRandom;
 }
 //----------------------------------------//
-
-
-// export const filter = (champions, id) => {
-//   //     const tags = champions.forEach(champion => champion.tag.filter(tag => tag === id));
-//   //     createCards(tags)
-//   // }
-  
-// let result = champions.filter(champion => champion.tags.Assassin === tags.Assassin);
-// //   let assassin = (champion.tags[0] === "Assassin") + (champion.tags[1] === "Assassin");
-// //   return assassin;
-// // })
-// return result;
-// }

@@ -1,7 +1,6 @@
 //Eventos del DOM   
 import { filterData, sortData, sortDataAZ, orderRandom} from './data.js';
 import data from './data/lol/lol.js';
-//console.log(example, data);
 //Aquí estamos conviertiendo nuestro objeto de objetos en un array//
 const champions = Object.values(data.data);
 const championsNum = champions.length;
@@ -21,7 +20,6 @@ function createHtml(oneChampion){
     `
     }
 }
-
 
 function createCards(champions){
     let cards = "";
@@ -139,49 +137,6 @@ document.querySelector("#select").addEventListener('change', (event) =>{
         }   
     })
 //------------------------------------------------------//
-
-
-// //--------------FUNCIÓN PARA FILTRAR DE LA Z-A --------------//
-// document.querySelector('#select').addEventListener('change', (event) =>{
-//     if (event.target.value === "Z-A"){
-//         const filterZA = sortData(champions)
-//         createCards(filterZA);
-//         } else if (event.target.value === "A-Z"){
-//             let filterAZ = sortDataAZ(champions);
-//             createCards (filterAZ);
-//         }
-//         // else{
-//         //     return createCards(champions);
-//         // }
-//     })
-
-
-// document.querySelector('#select').addEventListener('change', (event) =>{
-//     const orderZA = event.target.value; 
-//     if (orderZA === "A-Z"){
-//         console.log(createCards(champions));
-//         }
-//         // return createCards;
-//     })
-//--------------FUNCIÓN PARA FILTRAR DE LA Z-A--------------//
-// document.querySelector("#select").addEventListener('click', showFilterAZ);
-// function showFilterAZ (){
-//     //console.log(sortData(champions));
-//     let filterAZ = sortData(champions)
-//     createCards(filterAZ);
-// }
-//Codigo Carlos
-// document.addEventListener('DOMContentLoaded',()=>{
-//     console.log("algo")
-//     assassin.addEventListener('change',(e)=>{
-//         // let filterAssassin = loll(champions, 'Assassin');
-//         // return filterAssassin;
-//         console.log("ya sirvo assassin", e.target.value)
-//     })
-//     //console.log(loll(champions, 'Assassin'));
-// })
-
-
 //Barra buscadora de campeones
 //--------------------BUSCAR-------------------//
 const buscar = document.querySelector("#buscar");
@@ -215,24 +170,3 @@ showButtonGoUp.addEventListener('click', function(){
     document.querySelector('#goUp').style.display = 'block';
     document.querySelector('#homePage').style.display = 'none';
 })
-/////////////// FUNCIÓN QUE NOS AYUDÓ A CREAR CARLOS
-//let assassin = document.getElementById('assassin');
-//FUNCIÓN PARA FILTRAR ASESINOS
-// document.addEventListener('DOMContentLoaded',()=>{   
-//     assassin.addEventListener('change',(e)=>{
-//         document.getElementById('cards-container').style.display = "none";
-//         document.getElementById('filter-cards-container').style.display = "flex";
-//         let filterAssassin1 = loll(champions, 'Assassin');
-//         filterAssassin1.forEach(elemento => {
-//             let resultAssassin = `
-//                 <div id="one-container" class="one-container">
-//                     <img src="${elemento.splash}" class="img-container">
-//                     <h4 id="description">${elemento.name}</h4>
-//                 </div>
-//                 `;  
-//             filterAssassin.insertAdjacentHTML("beforeend", resultAssassin);
-//             });
-//             let numAssassin = filterAssassin1.length;
-//             document.getElementById('numChampions').innerHTML = numAssassin; 
-//     })
-// })
